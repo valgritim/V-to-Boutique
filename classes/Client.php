@@ -1,6 +1,6 @@
 <?php
 
-require 'admin/database.php';
+
 include_once 'Personne.php';
 
 class Client extends Personne{

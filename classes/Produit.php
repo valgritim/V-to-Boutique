@@ -1,6 +1,6 @@
 <?php
 
-require 'admin/database.php';
+//require '../admin/database.php';
 /**
  * Définis l'objet produit
  * produits proposés dans mon magasin Véto Boutique
@@ -41,7 +41,7 @@ class Produit
 
 	//fonction getUsers
 	// permet de récupérer la liste de tous les produits dans la base ! C'est une méthode de classe d'où le static
-	static function getAll(){
+	public static function getAll(){
 		$db = Database::connect();
 		$sql = "SELECT * FROM `produits`";
 		$statement = $db->query($sql);
@@ -49,23 +49,23 @@ class Produit
 
 		while($item = $statement->fetch()){
                     
-                    echo '<tr>';
+                    echo '<tr class="bg-dark">';
                         echo '<td>' . $item['nom_produit']. '</td>';
                         echo '<td>' . $item['categorie']. '</td>';
                         echo '<td>' . $item['descr_produit']. '</td>';
-                        echo '<td>' . number_format((float)$item['prix'],2, '.', '') . '</td>';
+                        echo '<td>' . number_format((float)$item['prix'],2, '.', '') . ' €</td>';
                         echo '<td>' . $item['stock']. '</td>';
-                        echo '<td width=300>';
-                        echo '<a class="btn btn-default" href="view.php?id=' .$item['id'] . '"><i class="far fa-eye"></i> Voir</a>';
+                        echo '<td width=350>';
+                        echo '<a class="btn btn-secondary mr-2" href="view.php?id=' .$item['id'] . '"><i class="far fa-eye"></i> Voir</a>';
                         echo ' ';
-                        echo '<a class="btn btn-primary" href="update.php?id=' . $item['id'] . '"><i class="fas fa-pencil-alt"></i> Modifier</a>';
+                        echo '<a class="btn btn-primary mr-2" href="update.php?id=' . $item['id'] . '"><i class="fas fa-pencil-alt"></i> Modifier</a>';
                         echo ' ';
                         echo '<a class="btn btn-danger" href="delete.php?id=' . $item['id'] . '"><i class="fas fa-trash-alt"></i> Supprimer</a>';
                         echo '</td>';
                         echo '</tr>';
 
 
-
+                    }
 
 		Database::disconnect();
 		return $item;
@@ -100,14 +100,93 @@ class Produit
 
 	}
 
+	public function readProduit(){
+
+		$db = Database::connect();
+
+		if(!empty($_GET['id'])){
+    
+    		$id = ($_GET['id']);
+
+		} 	
+
+		 	$statement = $db->prepare('SELECT * FROM produits WHERE id = ?');
+		 	$statement->execute(array($id));
+		 	
+		 	while($item = $statement->fetch()){
+
+		 		echo '<div class="container admin bg-dark py-3 px-3" style="color:#fff; margin-top:10rem;">
+            			<div class="row">
+                			<div class="col-sm-6">
+                    			<h1><strong>Voir un produit</strong></h1>
+			                    <br>
+			                   	<form>
+                        			<div class="form-group">
+                            			<label><strong>Nom: </strong>' . $item['nom_produit'] . '</label>
+                            		</div>
+                       				<div class="form-group">
+                            			<label><strong>Catégorie: </strong>' . $item['categorie']. '</label>
+                                    </div>
+                        			<div class="form-group">
+                            			<label><strong>Prix: </strong>' . number_format((float)$item['prix'],2, '.', '') .' €</label>
+                                    </div>
+                        			<div class="form-group">
+                            			<label><strong>Description: </strong>' . $item['descr_produit'] . '</label>
+                            		</div>
+                        			<div class="form-group">
+                            			<label><strong>Image: </strong>' . $item['image'] .'</label>
+                                    </div>
+                                </form>
+                    			<br>
+                    			<div class="form-actions">
+                        			<a class="btn btn-primary" href="index.php"><i class="fas fa-arrow-left"></i> Retour</a>
+                    			</div>
+                			</div>
+                			<div class="col-sm-6 site">
+                    			
+                        			<img src="../images/' . $item['image'] . '"alt=" produit" style="width:70%;">
+                        		        
+                            		<h4 class="mt-3">' . $item['nom_produit']. '</h4>                   
+                            				                          				
+                           			
+                    			
+                			</div>
+           				</div>
+        			</div>';
+        		}
+
+
+		 
+		 Database::disconnect();
+		 return $item;
+
+	}
+
 	public function updateProduit(){
 
 
 	}
 
-	public function deleteProduit(){
+	public static function deleteProduit(){
 
+		$db = Database::connect();
 
+		$id = ($_GET['id']);
+
+		if(!empty($_POST['id']))
+    	{
+	        $id = $_POST['id'];
+	        $db = Database::connect();
+	        $statement = $db->prepare("DELETE FROM produits WHERE id = ?");
+	        $statement->execute(array($id));
+	        Database::disconnect();	        
+	        header('Location:index.php?delete=success');
+	        
+   		}
+		
 	}
-
+	
 }
+
+ 
+    

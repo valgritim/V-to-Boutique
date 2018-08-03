@@ -29,28 +29,37 @@ session_start();
 			  	<a class="navbar-brand" style="font-size:2rem; color:#fff;padding-right: 2rem;">Véto Boutique</a>
 			    <ul class="navbar-nav" style="list-style-type:none;">
 			      <li class="nav-item active">
-			        <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+			        <a class="nav-link" href="../index.php">Accueil <span class="sr-only">(current)</span></a>
 			      </li>
 			 </ul>
 			</div>
 		</nav>
 			      <!--  Body---------------------- -->
-		<div class="container admin" style="margin-top: 15rem;">
+		<div class="container admin" style="margin-top: 10rem;">
             <div class="row">
                 <h1 style="color:#fff;"><strong>Liste des items  </strong><a href="insert.php" class="btn btn-success btn-lg"><i class="fas fa-plus"></i> Ajouter</a></h1>
 
                 <table class="table table-striped table-bordered" style="color: #fff;">
                     <thead>
-                        <tr>
+                        <tr class="bg-dark">
                             <th>Nom</th>
                             <th>Catégorie</th>
                             <th>Description</th>
                             <th>Prix</th>
-                            <th>En stock</th>
+                            <th>Stock</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
+                    	<?php
 
+                    	require 'database.php';
+
+                    	require '../classes/Produit.php';
+
+                    	Produit::getAll();
+
+                    	?>
                     
 
                     </tbody>

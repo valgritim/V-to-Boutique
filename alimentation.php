@@ -1,3 +1,5 @@
+<?php 
+require 'admin/database.php'; ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -35,17 +37,17 @@
 			        <a class="nav-link" href="medocs.php">Médicaments</a>
 			      </li>
 			    </ul>
-			    	<a href="user/register.php" style="position: absolute; right: 300px; margin-right: 6rem;color:#fff;"> S'inscrire <i class="far fa-edit"></i></a>
-		   			<a href="user/login.php" style="position: absolute; right: 200px; margin-right: 2rem;color:#fff;"> Se connecter <i class="fas fa-sign-in-alt"></i></a>
+			    	<a href="register.php" style="position: absolute; right: 300px; margin-right: 6rem;color:#fff;"> S'inscrire <i class="far fa-edit"></i></a>
+		   			<a href="login.php" style="position: absolute; right: 200px; margin-right: 2rem;color:#fff;"> Se connecter <i class="fas fa-sign-in-alt"></i></a>
 		  			 <br/>
-		   			<a href="user/login.php" style="position: absolute; right: 50px; margin-right: 2rem;color:#fff;"> Votre panier <i class="fas fa-cart-arrow-down"></i></a>
+		   			<a href="cart.php" style="position: absolute; right: 50px; margin-right: 2rem;color:#fff;"> Votre panier <i class="fas fa-cart-arrow-down"></i></a>
 			  	</div>
 			</nav>
 		</div>
 		<!-- BODY--------------- -->
 			
 		<div class="container">
-	    	<div class="row" style="margin-top: 15rem; color:#fff;">
+	    	<div class="row" style="margin-top: 10rem; color:#fff;">
 
 	    		<?php
 

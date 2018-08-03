@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	require 'admin/database.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr">

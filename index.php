@@ -79,7 +79,7 @@
 
 	    	</div>
 
-		<div class="card mx-5 py-3 px-3" style="width: 25rem;height:35rem;margin-top: 5rem; margin-bottom: 5rem;">
+		<div class="card mx-5 my-1 py-3 px-3" style="width: 25rem;height:35rem;">
 			<h4 class="text-center">Notre boutique vous propose: </h4>
 			<p>Praeceps cum in autem haec similia truculenti lenitate erga humanitatisque cum veritatis trudebat rettulimus illius Maximini regina lenitate stimulos factitasse haec stimulos deberet utilia lenitate Gordianorum potius Gordianorum ut utilia illius utilia reducere erga multa fortunas similia veritatis erga exitium ad fortunas. <br/><br/>imperatoris veritatis Maximini in ad multa autem praeceps ut actibus mariti suadendo scrutanda quae viam suadendo actibus admovente scrutanda obstinatum haec imperatoris eum eum Maximini Maximini erga veritatis exitium potius.<br/><br/>scrutanda in reducere in exitium reducere veritatis abrupte in veritatis praeceps utilia haec truculenti humanitatisque et deberet quae similia abrupte praeceps in eum feminea potius reducere reducere imperatoris.</p>
 		</div>

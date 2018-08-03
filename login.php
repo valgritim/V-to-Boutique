@@ -1,6 +1,7 @@
 <?php
 
 	session_start();
+	require 'admin/database.php';
 	require 'classes/Client.php';
 
 	$email = $pwd = "";
