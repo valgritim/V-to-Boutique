@@ -1,0 +1,35 @@
+body{
+	
+	margin: 0;
+	padding-top: 0;
+	background: url(../images/lionceau.jpg);
+	
+}
+
+.logoG{
+
+	width: 10%;
+	height: 10%;
+}
+.navbar{
+
+	font-size: 1.1rem;
+	
+}
+.footer {
+   padding-top: 1em;
+   padding-left: 1em;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #2d5986;
+   color: white;
+   height: 4.3em;
+   /*position: fixed; */
+
+
+}
+.footer a{
+
+	color: #fff;
+}
