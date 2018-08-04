@@ -95,10 +95,20 @@ class Produit
 		return $item;
 	}
 
-	public function createProduit(){
+	public static function createProduit($nom_produit,$categorie,$description,$img,$prix,$stock){
+		$db = Database::connect();
 
+		$statement = $db->prepare("INSERT INTO produits (nom_produit,categorie,descr_produit,image,prix,stock) values (?,?,?,?,?,?)");
+		$statement->execute(array($nom_produit,$categorie,$description,$img,$prix,$stock));
+	  //   echo "<pre>";
+ 		// $statement->debugDumpParams();
+ 		// echo "</pre>";
+
+ 		Database::disconnect();	        
+	    header('Location:index.php?insert=success');	
 
 	}
+
 // fonction qui permet de voir le détail du produit sélectionné dans l'index.php (dans admin)
 	public function readProduit(){
 

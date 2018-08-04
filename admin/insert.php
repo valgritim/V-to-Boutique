@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -21,28 +21,28 @@
 		
 	</head>
 	<body>
-		<div class="container-fluid pl-0">
+		<!-- <div class="container-fluid pl-0">
 			<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top justify-content-center"><img src="../images/chat.png" class="logoG">
 
 			  	<div class="collapse navbar-collapse" id="navbarNav">
 			  		<a class="navbar-brand" style="font-size:2rem; color:#fff;padding-right: 2rem;">Véto Boutique</a>
 			    		<ul class="navbar-nav" style="list-style-type:none;">
 			      			<li class="nav-item active">
-			        			<a class="nav-link" href="admin/index.php">Accueil <span class="sr-only">(current)</span></a>
+			        			<a class="nav-link" href="index.php">Accueil <span class="sr-only">(current)</span></a>
 			      			</li>
 			 			</ul>
 				</div>
 			</nav>
-		</div>
+		</div> -->
 			      <!--  Body---------------------- -->
 
-     <form class="form col-md-8 col-lg-12" action="newProduit.php" method="post" role="form">   
+     <form class="form col-md-8 col-lg-12" action="newProduit.php" method="post" role="form" enctype="multipart/form-data">   
 		<div class="container admin bg-dark mb-5 py-3 px-3" style="color:#fff; margin-top:10rem;">
             <div class="row">
                 <div class="col-sm-10 col-md-8 offset-1 col-lg-10 offset-1">
                     <h1><strong>Enregistrer un nouveau produit <i class="fas fa-door-open"></i></strong></h1>
 			        <br>
-			        <div class="bg bg-danger">
+			        <div class="bg bg-danger text-center inline-block">
 			        	<?php
                     		if(isset($_SESSION["error"])){
 						    $error = $_SESSION["error"];
@@ -71,8 +71,8 @@
                             <input type="text" class="form-control" id="stock" name="stock" placeholder="stock">
                         </div>
                         <div class="form-group">
-                        	<label class="text-primary"><strong>Télécharger une image: </strong></label>
-                            <input type="file" class="form-control" id="image" name="image" placeholder="image">
+                        	<label for ="image"class="text-primary"><strong>Télécharger une image: </strong></label>
+                            <input type="file" class="form-control" id="img" name="img" placeholder="image">
                         </div>	
                         <br>
                     	<div class="form-actions">
@@ -89,3 +89,7 @@
     </form>
 	</body>
 </html>
+<?php
+	session_unset();
+
+?>
