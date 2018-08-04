@@ -26,11 +26,18 @@ session_start();
 			<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top justify-content-center"><img src="../images/chat.png" class="logoG">
 
 			  <div class="collapse navbar-collapse" id="navbarNav">
-			  	<a class="navbar-brand" style="font-size:2rem; color:#fff;padding-right: 2rem;">Véto Boutique</a>
+			  	<a class="navbar-brand" style="font-size:2rem; color:#fff;padding-right: 2rem;">Véto Boutique Administrateur <i class="fas fa-user"></i></a>
 			    <ul class="navbar-nav" style="list-style-type:none;">
 			      <li class="nav-item active">
-			        <a class="nav-link" href="../index.php">Accueil <span class="sr-only">(current)</span></a>
+			        <a class="nav-link ml-3" href="../index.php">Retour accueil <span class="sr-only">(current)</span></a>
 			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link" href="#">Gestion employés <i class="fas fa-briefcase"></i></a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link" href="#">Gestion fournisseurs <i class="fas fa-users"></i></a>
+			      </li>
+
 			 </ul>
 			</div>
 		</nav>

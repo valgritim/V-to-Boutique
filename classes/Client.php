@@ -77,27 +77,8 @@ class Client extends Personne{
 
 	static function read()
 	{
-		$db = Database::connect();
-		$sql = "SELECT * FROM `users` WHERE ";
-		$statement = $db->query($sql);
 		
-		while($item = $statement->fetch())
-                    {
-                        echo '<tr>';
-                        echo '<td>' . $item['guide_first']. '</td>';
-                        echo '<td>' . $item['guide_last']. '</td>';
-                        echo '<td>' . $item['commune']. '</td>';
-                        echo '<td>' . $item['theme']. '</td>';
-                        echo '<td>' . $item['pays']. '</td>';
-                        echo '<td width=320>';
-                        echo '<a class="btn btn-default" href="view.php?id=' .$item['id'] . '"><i class="far fa-eye"></i> Voir</a>';
-                        echo ' ';
-                        echo '<a class="btn btn-primary" href="update.php?id=' . $item['id'] . '"><i class="fas fa-pencil-alt"></i> Modifier</a>';
-                        echo ' ';
-                        echo '<a class="btn btn-danger" href="delete.php?id=' . $item['id'] . '"><i class="fas fa-trash-alt"> Supprimer</a>';
-                        echo '</td>';
-                        echo '</tr>';
-                    }
+                   
 	}
 
 	

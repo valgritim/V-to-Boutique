@@ -63,16 +63,17 @@
 
 		<!--BODY-------------------------------  -->
 		
-	    	<div class="row" style="margin-top: 15rem; color:#fff;">
+	    	<div class="row" style="margin-top: 8rem; color:#fff;">
 	    		<h2 class="m-auto text-center">Votre panier: </h2>
-	    		
-	    			
-	    				
-	    			
-	    			
-
-
 	    	</div>
+	    	<div>	
+	    		<img src="images/mirac.png" style="width: 25%; height:40%; margin-left: 37rem;">	
+	    	</div>			
+	    			
+	    			
+
+
+	    	
 
 <!-- -----------FOOTER------ -->
 	<!-- <div class="footer bg-dark">

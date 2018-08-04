@@ -17,7 +17,7 @@ class Produit
 	private $_id, $_produit, $_description, $_image, $_prix, $_stock, $_categorie;
 
 	//constructeur
-	function __construct($produit, $desc, $img, $prix,$stock,$categorie)
+	function __construct($id,$produit, $categorie, $desc, $img, $prix,$stock)
 	{
 		# code...
 		$this->_id = $id;
@@ -39,13 +39,13 @@ class Produit
 		$this->$attr = $val;
 	}
 
-	//fonction getUsers
-	// permet de récupérer la liste de tous les produits dans la base ! C'est une méthode de classe d'où le static
+	//fonction getAll
+	// permet de récupérer la liste de tous les produits dans la base ! 
 	public static function getAll(){
 		$db = Database::connect();
 		$sql = "SELECT * FROM `produits`";
 		$statement = $db->query($sql);
-		// $return = $statement->fetchAll();
+		
 
 		while($item = $statement->fetch()){
                     
@@ -53,7 +53,7 @@ class Produit
                         echo '<td>' . $item['nom_produit']. '</td>';
                         echo '<td>' . $item['categorie']. '</td>';
                         echo '<td>' . $item['descr_produit']. '</td>';
-                        echo '<td>' . number_format((float)$item['prix'],2, '.', '') . ' €</td>';
+                        echo '<td>' . number_format((float)$item['prix'],2, '.', '') . ' </td>';
                         echo '<td>' . $item['stock']. '</td>';
                         echo '<td width=350>';
                         echo '<a class="btn btn-secondary mr-2" href="view.php?id=' .$item['id'] . '"><i class="far fa-eye"></i> Voir</a>';
@@ -70,7 +70,7 @@ class Produit
 		Database::disconnect();
 		return $item;
 	}
-
+//  fonction qui permet de récuperer les produits par catégorie(alimentation, jouet, médicament) par une requete a la db
 	public function getProduitByCategory($categorie){
 		$db = Database::connect();
 		$sql = "SELECT * FROM `produits` WHERE `categorie` = '$categorie'";
@@ -99,7 +99,7 @@ class Produit
 
 
 	}
-
+// fonction qui permet de voir le détail du produit sélectionné dans l'index.php (dans admin)
 	public function readProduit(){
 
 		$db = Database::connect();
@@ -162,16 +162,35 @@ class Produit
 
 	}
 
-	public function updateProduit(){
+	public function updateProduit($produit,$categorie,$description,$img,$prix,$stock,$id){
+		
 
+		$db = Database::connect();
 
-	}
+		$statement = $db->prepare("UPDATE produits SET nom_produit = ?, categorie = ?, descr_produit = ?, image = ?, prix = ?, stock = ? WHERE id = ?");
+        $statement->execute(array($this->_produit,$this->_categorie,$this->_description,$this->_image,$this->_prix,$this->_stock,$this->_id));
+   //      echo "<pre>";
+ 		// $statement->debugDumpParams();
+ 		// echo "</pre>";
+    
+        
+		
+		header("Location: index.php?update=success");	
+
+		 	
+     }       		
 
 	public static function deleteProduit(){
 
 		$db = Database::connect();
 
-		$id = ($_GET['id']);
+		$_SESSION['nom_produit'] = $produit;
+		$_SESSION['categorie'] = $categorie;
+		$_SESSION['prix'] = $prix;
+		$_SESSION['descr_produit'] = $description;
+		$_SESSION['stock'] = $stock;
+		$_SESSION['id'] = $id;
+		$_SESSION['image'] = $img;
 
 		if(!empty($_POST['id']))
     	{

@@ -46,6 +46,9 @@
 
 					} else {
 
+						require 'admin/database.php';
+						
+
 						$user = new Client($last,$first,$email,$address,$city,$pc,$dateCrea,$pwd);						
 						$user->new();
 					}
