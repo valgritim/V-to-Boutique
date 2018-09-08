@@ -77,15 +77,16 @@ class Produit
 		$statement = $db->query($sql);
 		while($item = $statement->fetch()){
                     echo '<div class="col-sm-8 col-md-4 mb-5">
-                                <div class="card pt-3" style="width: 18rem; height:33rem;">
+                                <div class="card pt-3 border border-success" style="width: 18rem; height:35rem;">
                                     <img class="card-img-top pb-2 border-bottom" style="height:15rem;" src="images/' . $item['image'] . '" alt="..."/>
-                                  <div class="card-body">
+                                  <div class="card-body text-center">
                                   	<h5 class="card-title" style="color:black;">' . $item['nom_produit'] .'</h5>
                                  	<p class="card-text" style="color:black;">' . $item['descr_produit'] .'</p>
                                     <p class="card-text" style="color:black;">' . $item['prix'] . ' €</p>
-                                    <p class="card-text" style="color:black;"><strong>Quantité en stock: </strong>' . $item['stock'] . ' </p>
-                                    <a href="#" class="btn btn-order bg-success" role="button"><span class="glyphicon glyphicon-shopping-cart"></span> Commander</a>
-                                   </div>
+                                    <p class="card-text" style="color:black;"><strong>Quantité en stock: </strong>' . $item['stock'] . ' </p></div>
+                                    <div class="card-footer text-center" style="height:4rem;">
+                                    <a href="#" class="btn btn-order bg-success text-light" role="button"><span class="glyphicon glyphicon-shopping-cart"></span> Commander</a></div>
+                                   
                                 </div>
                            </div>';
                     
@@ -109,7 +110,7 @@ class Produit
 
 	}
 
-// fonction qui permet de voir le détail du produit sélectionné dans l'index.php (dans admin)
+// methode qui permet de voir le détail du produit sélectionné dans l'index.php (dans admin)
 	public function readProduit(){
 
 		$db = Database::connect();
@@ -171,6 +172,7 @@ class Produit
 		 return $item;
 
 	}
+	//methode qui permet de modifier un produit
 
 	public function updateProduit($produit,$categorie,$description,$img,$prix,$stock,$id){
 		
@@ -179,9 +181,10 @@ class Produit
 
 		$statement = $db->prepare("UPDATE produits SET nom_produit = ?, categorie = ?, descr_produit = ?, image = ?, prix = ?, stock = ? WHERE id = ?");
         $statement->execute(array($this->_produit,$this->_categorie,$this->_description,$this->_image,$this->_prix,$this->_stock,$this->_id));
-   //      echo "<pre>";
- 		// $statement->debugDumpParams();
- 		// echo "</pre>";
+        //debug
+		 //  echo "<pre>";
+		  //$statement->debugDumpParams();
+		 // echo "</pre>";
     
         
 		
