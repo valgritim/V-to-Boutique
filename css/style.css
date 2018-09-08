@@ -1,12 +1,19 @@
+* {
+	-moz-box-sizing: border-box; 
+	box-sizing: border-box;
+}
 body{
 	
 	margin: 0;
 	padding-top: 0;
 	background: url(../images/lionceau.jpg);
+	min-height: 100%;
+	padding-bottom: 6.3rem;
+	position: relative;
 	
 }
 
-.logoG{
+#logoG{
 
 	width: 6%;
 	height: 6%;
@@ -16,20 +23,67 @@ body{
 	font-size: 1rem;
 	
 }
-.footer {
-   padding-top: 1em;
-   padding-left: 1em;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   background-color: #2d5986;
-   color: white;
-   height: 4.3em;
-   /*position: fixed; */
+.infos{
 
+	width: 5rem;
+	height: 5rem;
+}
+.card{
+
+	width: 60rem;
+	height:28rem;
+	-webkit-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.75);
+	box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.75);	
+}
+
+.card-body{
+	display: flex;
+	justify-content: space-around;
+	background-color: #fff;
+}
+
+.card-body img{
+
+	padding: 2rem;
+	-webkit-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.75);
+	box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.75);
+}
+.pub{
+	width: 20rem;
+	height: 13rem;
 
 }
-.footer a{
+.avatar {
+    width: 200px;
+    height: 200px;   
+    position: absolute;
+    top: -100px;
+    left: calc(80% - 50px);
+}
+.footer {
+	padding-top: 1em;
+	padding-left: 1em;
+	position: absolute; 
+	bottom: 0; 
+	left: 0; 
+	right: 0;
+	width: 100%;
+	background-color: #2d5986;
+	color: white;
+	height: 4.3em;
+	
+}
 
+.footer a{
 	color: #fff;
+}
+@media screen and (max-width: 768px){
+
+	#logoG{
+
+	display: none;
+	}
+
 }
