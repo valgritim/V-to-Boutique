@@ -19,32 +19,8 @@ require 'admin/database.php'; ?>
 	</head>
 	<body>
 		
-		<div class="container-fluid pl-0">
-			<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top justify-content-center"><img src="images/chat.png" class="logoG">
-			  
-			  <div class="collapse navbar-collapse" id="navbarNav">
-			  	<a class="navbar-brand" style="font-size:2rem; color:#fff;padding-right: 2rem;">Véto Boutique</a>
-			    <ul class="navbar-nav" style="list-style-type:none;">
-			      <li class="nav-item active">
-			        <a class="nav-link" href="index.php">Accueil <span class="sr-only">(current)</span></a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link" href="alimentation.php">Alimentation</a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link disabled" href="jouets.php">Jouets</a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link" href="medocs.php">Médicaments</a>
-			      </li>
-			    </ul>
-			    	<a href="register.php" style="position: absolute; right: 300px; margin-right: 6rem;color:#fff;"> S'inscrire <i class="far fa-edit"></i></a>
-		   			<a href="login.php" style="position: absolute; right: 200px; margin-right: 2rem;color:#fff;"> Se connecter <i class="fas fa-sign-in-alt"></i></a>
-		  			 <br/>
-		   			<a href="cart.php" style="position: absolute; right: 50px; margin-right: 2rem;color:#fff;"> Votre panier <i class="fas fa-cart-arrow-down"></i></a>
-			  	</div>
-			</nav>
-		</div>
+		<?php include('includes/nav.php'); ?>
+
 		<!-- BODY--------------- -->
 			
 		<div class="container">
