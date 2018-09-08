@@ -29,7 +29,7 @@ session_start();
 			  	<a class="navbar-brand" style="font-size:2rem; color:#fff;padding-right: 2rem;">Véto Boutique Administrateur <i class="fas fa-user"></i></a>
 			    <ul class="navbar-nav" style="list-style-type:none;">
 			      <li class="nav-item active">
-			        <a class="nav-link ml-3" href="../index.php">Retour accueil <span class="sr-only">(current)</span></a>
+			        <a class="nav-link ml-3" href="../index.php">Retour accueil</a>
 			      </li>
 			      <li class="nav-item">
 			        <a class="nav-link" href="#">Gestion employés <i class="fas fa-briefcase"></i></a>

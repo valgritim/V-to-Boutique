@@ -51,7 +51,7 @@ $db = Database::connect();
 			  		<a class="navbar-brand" style="font-size:2rem; color:#fff;padding-right: 2rem;">Véto Boutique</a>
 			    		<ul class="navbar-nav" style="list-style-type:none;">
 			      			<li class="nav-item active">
-			        			<a class="nav-link" href="admin/index.php">Accueil <span class="sr-only">(current)</span></a>
+			        			<a class="nav-link" href="admin/index.php">Accueil</a>
 			      			</li>
 			 			</ul>
 				</div>
@@ -95,7 +95,7 @@ $db = Database::connect();
                         </div>
                         <br>
                     	<div class="form-actions">
-                    		<input class="btn btn-warning mr-2" type="submit" name="submit" value="Valider">
+                    		<input class="btn btn-warning mr-2" type="submit" name="submit" value="Valider" disabled>
                         	<a class="btn btn-primary" href="index.php"><i class="fas fa-arrow-left"></i> Retour</a>
                     	</div>
                         			

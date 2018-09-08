@@ -29,7 +29,7 @@ session_start();
 			  		<a class="navbar-brand" style="font-size:2rem; color:#fff;padding-right: 2rem;">Véto Boutique</a>
 			    	<ul class="navbar-nav" style="list-style-type:none;">
 			      		<li class="nav-item active">
-			        	<a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+			        	<a class="nav-link" href="#">Accueil</a>
 			      		</li>
 			 		</ul>
 				</div>
@@ -45,7 +45,7 @@ session_start();
                     <p class="alert alert-warning block">Etes-vous sûr de vouloir supprimer ce produit? </p>
                     <div class="form-actions">
                         <button type="submit" class="btn btn-warning" method="POST" action="<?php
-				                require 'database.php'; require '../classes/Produit.php'; Produit::deleteProduit();?>">
+				                require 'database.php'; require '../classes/Produit.php'; Produit::deleteProduit();?>" disabled>
             		Oui</button>
                         <a class="btn btn-danger " href="index.php ">Non</a>
                     </div>
